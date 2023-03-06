@@ -1,0 +1,10 @@
+1. create a file index.ts.
+2. compile: tsc index => an index.js will be created. It's in es5 with var, not let and const. To config it to 'es6' use config file
+3. to watch : tsc --watch index 
+4. to create config file: tsc --init, a tsconfig.json is created. change target to 'es6', uncomment 'outDir' and make change to "outDir": "./dist", which will put compiled js file into dist folder, so that ts files are seperated from js files. Same for 'rootDir', change it to "rootDir":"./src", so that all ts files are in 'src' folder. for  "module": "commonjs", the coommonjs can be changed to 'es2015' e.g. For the two folders 'dist' and 'src', they need to be manually added to the project, then move the ts file to 'src' folder, delete 'js' files, then run 'tsc' in the terminal to auto generate 'js' files.
+5. if add an 'index.html' with script to index.js, after compile with 'tsc' or 'tsc --watch', then in live server, we can see the website created from index.ts file.
+6. ts types are number, string, boolean, any, number[], any[], 
+    for tuple: let person:[number, string, boolean] = [1, 'nancy', true];
+    for union: let person: string | number ; person = 22, or person = '22';
+7. for object type: type User = {id:number, name:string} let user1:User = {id: 1, name: 'nancy'}
+8. for type insertion: let id :any = 1; let studentId = <number>id or let studentId = id as number. Two ways to specify the studentId as number type.
